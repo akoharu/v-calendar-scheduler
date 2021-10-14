@@ -58,7 +58,9 @@
         },
         computed: {
             displayHeight() {
-
+                if (!this.event.startTime) {
+                    return 0
+                }
                 const end = this.event.endTime.hours() > 0 ? moment(this.event.endTime) : moment(this.event.endTime).add(1, 'days');
 
                 const hours = end.diff(this.event.startTime, 'hours', true);
@@ -85,12 +87,19 @@
                             'left': width + '%'
                         });
                     }
-
+                    if (!this.event.startTime) {
+                        console.log(this.displayHeight);
+                        styles.push({
+                            'height': 25 + 'px'
+                        });                                                
+                    }else {
                     if ( this.event.startTime.minutes() > 0 ) {
                         const distance = ( this.ancestorHeight / 60 ) * this.event.startTime.minutes();
                         styles.push({
                             'top': distance + 'px'
                         });
+                    }
+
                     }
                 }
 

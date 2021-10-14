@@ -3,10 +3,9 @@
   "version": "0.7.4",
   "license": "MIT",
   "description": "Calendar scheduler component for VueJs",
-  "homepage": "https://v-calendar.davidpaternina.com/",
-  "bugs": "https://github.com/dapd007/v-calendar-scheduler/issues",
-  "author": "David Paternina <david@fanxielab.com>",
-  "repository": "https://github.com/dapd007/v-calendar-scheduler",
+  "bugs": "https://github.com/akoharu/v-calendar-scheduler/issues",
+  "author": "Asep Kohar <hallo@kohar.space>",
+  "repository": "https://github.com/akoharu/v-calendar-scheduler",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
