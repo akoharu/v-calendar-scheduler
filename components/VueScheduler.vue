@@ -2,11 +2,6 @@
   <div class="v-cal">
     <header class="v-cal-header">
       <div class="v-cal-header__actions">
-        <div class="actions-left">
-          <button class="v-cal-button" v-if="showTodayButton" @click="goToToday" :class="{ 'v-cal-button--is-active': activeDate && activeDate.isSame( today, 'day' )}">{{ labels.today }}</button>
-          <button :disabled="!isPrevAllowed" class="v-cal-button" @click="prev" v-html="labels.back"></button>
-          <button :disabled="!isNextAllowed" class="v-cal-button" @click="next" v-html="labels.next"></button>
-        </div>
         <div class="actions-right">
           <button class="v-cal-button" v-for="view in availableViews" @click="switchView(view)" :class="{ 'v-cal-button--is-active': activeView === view }" >{{ labels[view] | capitalizeFirstLetter }}</button>
         </div>
@@ -14,6 +9,22 @@
       <div class="v-cal-header__title-bar">
         <h3 class="v-cal-header__title">{{ calendarTitle }}</h3>
       </div>
+        <div class="prev-next">
+          <button class="v-cal-button" v-if="showTodayButton" @click="goToToday" :class="{ 'v-cal-button--is-active': activeDate && activeDate.isSame( today, 'day' )}">{{ labels.today }}</button>
+          <button :disabled="!isPrevAllowed" class="v-cal-button v-cal-btn-left" @click="prev">
+<svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.70723 0.845689C6.09775 1.23621 6.09775 1.86938 5.70723 2.2599L2.41434 5.5528L5.70723 8.84569C6.09775 9.23621 6.09775 9.86938 5.70723 10.2599C5.3167 10.6504 4.68354 10.6504 4.29301 10.2599L0.293015 6.2599C-0.097509 5.86938 -0.097509 5.23621 0.293015 4.84569L4.29301 0.845689C4.68354 0.455164 5.3167 0.455164 5.70723 0.845689Z" fill="#6B7280"/>
+</svg>
+
+          </button>
+          <button :disabled="!isNextAllowed" class="v-cal-button v-cal-btn-right" @click="next">
+             <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.293016 10.2599C-0.0975086 9.86938 -0.0975086 9.23621 0.293016 8.84569L3.58591 5.5528L0.293015 2.2599C-0.097509 1.86938 -0.097509 1.23621 0.293015 0.845689C0.68354 0.455164 1.3167 0.455164 1.70723 0.845689L5.70723 4.84569C6.09775 5.23621 6.09775 5.86938 5.70723 6.2599L1.70723 10.2599C1.31671 10.6504 0.68354 10.6504 0.293016 10.2599Z" fill="#6B7280"/>
+</svg>
+
+
+          </button>
+        </div>
     </header>
     <component
             :is="activeView"

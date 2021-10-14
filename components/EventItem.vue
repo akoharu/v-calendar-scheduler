@@ -88,9 +88,8 @@
                         });
                     }
                     if (!this.event.startTime) {
-                        console.log(this.displayHeight);
                         styles.push({
-                            'height': 25 + 'px'
+                            'height': 'max-content'
                         });                                                
                     }else {
                     if ( this.event.startTime.minutes() > 0 ) {
