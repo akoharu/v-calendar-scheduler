@@ -102,8 +102,6 @@
     @include unselectable;
     position: relative;
     flex-grow: 1;
-    background-color: $v-cal-event-bg;
-    color: $v-cal-event-bg;//$v-cal-event-color;
     border-radius: $v-cal-event-border-radius;
     padding: $v-cal-event-padding;
     text-align: left;

@@ -1,9 +1,8 @@
 <template>
     <div ref="event_block" class="v-cal-event-item"
          :title="event.startTime | formatEventTime(use12) + ' - ' + event.displayText"
-         :class="eventClasses"
          @click.stop="eventClicked"
-         :style="eventStyles">
+         :style="eventStyles" :class="eventClasses+' bg-'+event.color+'-400 text-'+event.color+'-800'">
         <span class="v-cal-event-time">{{ event.startTime | formatEventTime(use12) }}</span>
         <span class="v-cal-event-name">{{ event.displayText }}</span>
     </div>
@@ -70,10 +69,6 @@
             eventStyles() {
 
                 let styles = [];
-                styles.push({
-                    'backgroundColor': this.event.color,
-                    'color': this.event.color,
-                });
 
                 if ( this.hasDynamicSize ) {
                     styles.push({
