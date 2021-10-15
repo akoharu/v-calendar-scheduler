@@ -2,7 +2,7 @@
     <div ref="event_block" class="v-cal-event-item"
          :title="event.startTime | formatEventTime(use12) + ' - ' + event.displayText"
          @click.stop="eventClicked"
-         :style="eventStyles" :class="eventClasses+' bg-'+event.color+'-400 text-'+event.color+'-800'">
+         :style="eventStyles" :class="eventClasses+' bg-'+event.color+'-200 text-'+event.color+'-800'">
         <span class="v-cal-event-time">{{ event.startTime | formatEventTime(use12) }}</span>
         <span class="v-cal-event-name">{{ event.displayText }}</span>
     </div>
